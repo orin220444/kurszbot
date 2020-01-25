@@ -9,12 +9,13 @@ bot.hears('курс', (ctx) => {
       if (error) throw new Error(Error);
       if (response.statusCode === 200) {
         const data = JSON.parse(body);
-        ctx.reply(`Курс валют относительно к рублю на данный момент:
-    Доллар: ${data.Valute.USD.Value} ,
-    Евро: ${data.Valute.EUR.Value},
-    Фунт стерлингов: ${data.Valute.GBP.Value},
-    Юань: ${data.Valute.CNY.Value}.
-    `);
+        ctx.telegram.sendMessage(process.env.CHANNEL_ID,
+            `Курс валют относительно к рублю на данный момент:
+  Доллар: ${data.Valute.USD.Value},
+  Евро: ${data.Valute.EUR.Value},
+  Фунт стерлингов: ${data.Valute.GBP.Value},
+  Юань: ${data.Valute.CNY.Value}.
+  `);
       }
     });
   });
