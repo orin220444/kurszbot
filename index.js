@@ -4,7 +4,7 @@ const schedule = require('node-schedule');
 require('dotenv').config({path: './.env'});
 const bot = new Telegraf(process.env.BOT_TOKEN);
 bot.hears('курс', (ctx) => {
-  schedule.scheduleJob({hour: 11}, function() {
+  schedule.scheduleJob({hour: process.env.TIME_TO_SEND}, function() {
     request('https://www.cbr-xml-daily.ru/daily_json.js', (error, response, body) => {
       if (error) throw new Error(Error);
       if (response.statusCode === 200) {
