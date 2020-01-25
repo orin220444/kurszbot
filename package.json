@@ -1,6 +1,6 @@
 {
   "name": "kirzbot",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Simple telegram bot that sends exchange rates at the schedule time",
   "main": "index.js",
   "scripts": {
