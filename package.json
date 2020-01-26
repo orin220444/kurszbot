@@ -4,7 +4,9 @@
   "description": "Simple telegram bot that sends exchange rates at the schedule time",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "eslint":"./node_modules/.bin/eslint --fix --ext js .",
+    "dev":"npm run eslint"
   },
   "author": "orin220444",
   "license": "MIT",
