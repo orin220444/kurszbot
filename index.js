@@ -3,8 +3,10 @@ const request = require('request');
 const schedule = require('node-schedule');
 require('dotenv').config({path: './.env'});
 const bot = new Telegraf(process.env.BOT_TOKEN);
+const hour = process.env.HOUR_TO_SEND;
+const minute = process.env.MINUTE_TO_SEND;
 bot.hears('курс', (ctx) => {
-  schedule.scheduleJob({hour: process.env.TIME_TO_SEND, minute: process.env.MINUTE_TO_SEND}, function() {
+  schedule.scheduleJob({hour: hour, minute: minute}, function() {
     request('https://www.cbr-xml-daily.ru/daily_json.js', (error, response, body) => {
       if (error) throw new Error(Error);
       if (response.statusCode === 200) {
@@ -20,7 +22,7 @@ bot.hears('курс', (ctx) => {
     });
   });
   ctx.reply(
-      `Сообщение с курсом валют будет отправлено ${process.env.HOUR_TO_SEND}:${process.env.MINUTE_TO_SEND}`,
+      `Сообщение с курсом валют будет отправлено в ${hour}:${minute}`,
   );
 });
 bot.launch();
