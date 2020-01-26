@@ -8,7 +8,9 @@ const minute = process.env.MINUTE_TO_SEND;
 bot.hears('курс', (ctx) => {
   schedule.scheduleJob({hour: hour, minute: minute}, function() {
     request('https://www.cbr-xml-daily.ru/daily_json.js', (error, response, body) => {
-      if (error) throw new Error(Error);
+      if (error) {
+        throw new Error(Error);
+      }
       if (response.statusCode === 200) {
         const data = JSON.parse(body);
         ctx.telegram.sendMessage(process.env.CHANNEL_ID,
