@@ -19,5 +19,8 @@ bot.hears('курс', (ctx) => {
       }
     });
   });
+  ctx.reply(
+      `Сообщение с курсом валют будет отправлено ${process.env.TIME_TO_SEND}`,
+  );
 });
 bot.launch();
