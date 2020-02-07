@@ -18,6 +18,7 @@ bot.hears('курс', (ctx) => {
   Фунт стерлингов: ${data.Valute.GBP.Value},
   Юань: ${data.Valute.CNY.Value}.
   `);
+        ctx.reply('Курс валют уже на канале!');
       }
     });
   });
