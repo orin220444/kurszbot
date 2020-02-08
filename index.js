@@ -10,7 +10,7 @@ bot.hears('курс', (ctx) => {
     request('https://www.cbr-xml-daily.ru/daily_json.js', (error, response, body) => {
       if (error) throw new Error(Error);
       if (response.statusCode === 200) {
-        const data = JSON.parse(body);
+        let data = JSON.parse(body);
         ctx.telegram.sendMessage(process.env.CHANNEL_ID,
             `Курс валют относительно к рублю на данный момент:
   Доллар: ${data.Valute.USD.Value},
