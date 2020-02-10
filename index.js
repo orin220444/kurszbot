@@ -5,13 +5,13 @@ require('dotenv').config({path: './.env'});
 const bot = new Telegraf(process.env.BOT_TOKEN);
 const hour = process.env.HOUR_TO_SEND;
 const minute = process.env.MINUTE_TO_SEND;
-bot.hears('курс', async (ctx) => {
+bot.hears('курс', (ctx) => {
   schedule.scheduleJob({hour: hour, minute: minute}, function() {
     request('https://www.cbr-xml-daily.ru/daily_json.js', (error, response, body) => {
       if (error) throw new Error(Error);
       if (response.statusCode === 200) {
-        let data = await JSON.parse(body);
-        await ctx.telegram.sendMessage(process.env.CHANNEL_ID,
+        let data = JSON.parse(body);
+        ctx.telegram.sendMessage(process.env.CHANNEL_ID,
             `Курс валют относительно к рублю на данный момент:
   Доллар: ${data.Valute.USD.Value},
   Евро: ${data.Valute.EUR.Value},
