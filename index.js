@@ -27,4 +27,7 @@ bot.hears('курс', (ctx) => {
       `Сообщение с курсом валют будет отправлено в ${hour}:${minute}`,
   );
 });
-bot.launch();
+
+bot.launch().then(function() {
+  console.log('bot started');
+});
