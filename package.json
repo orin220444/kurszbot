@@ -1,5 +1,5 @@
 {
-  "name": "kurzsbot",
+  "name": "kurszbot",
   "version": "0.1.0",
   "description": "Simple telegram bot that sends exchange rates at the schedule time",
   "main": "index.js",
@@ -8,8 +8,16 @@
     "eslint": "./node_modules/.bin/eslint --fix --ext js .",
     "dev": "npm run eslint"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orin220444/kurszbot.git"
+  },
   "author": "orin220444",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/orin220444/kurszbot/issues"
+  },
+  "homepage": "https://github.com/orin220444/kurszbot/#readme",
   "dependencies": {
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
