@@ -5,15 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "eslint":"./node_modules/.bin/eslint --fix --ext js .",
-    "dev":"npm run eslint"
+    "eslint": "./node_modules/.bin/eslint --fix --ext js .",
+    "dev": "npm run eslint"
   },
   "author": "orin220444",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "node-schedule": "^1.3.2",
-    "request": "^2.88.0",
     "telegraf": "^3.36.0"
   },
   "devDependencies": {
