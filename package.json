@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "eslint":"./node_modules/.bin/eslint --fix --ext js .",
-    "dev":"npm run eslint"
+    "eslint": "./node_modules/.bin/eslint --fix --ext js .",
+    "dev": "npm run eslint"
   },
   "author": "orin220444",
   "license": "MIT",
@@ -19,7 +19,7 @@
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-google": "^0.14.0",
-    "acorn":">=7.1.1",
-    "minimist":">=1.2.2"
+    "acorn": ">=7.1.1",
+    "minimist": ">=1.2.2"
   }
 }
